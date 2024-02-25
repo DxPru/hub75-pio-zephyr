@@ -1,0 +1,7 @@
+# ninja log v5
+0	9	1708864149181209471	CMakeFiles/boot_stage2.dir/home/dxpru/Dev/Zephyr/modules/hal/rpi_pico/src/rp2_common/boot_stage2/boot2_w25q080.S.obj	c063cc9bdbbcb8ff
+9	34	1708864149204542496	boot_stage2	db382419d359d8ff
+9	34	1708864149204542496	boot_stage2.bin	db382419d359d8ff
+9	34	1708864149204542496	boot_stage2.S	db382419d359d8ff
+9	34	1708864149204542496	/home/dxpru/Dev/Zephyr/app/build/bootloader/boot_stage2.bin	db382419d359d8ff
+9	34	1708864149204542496	/home/dxpru/Dev/Zephyr/app/build/bootloader/boot_stage2.S	db382419d359d8ff

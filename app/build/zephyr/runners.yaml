@@ -1,0 +1,54 @@
+# Available runners configured by board.cmake.
+runners:
+- openocd
+- jlink
+- uf2
+- blackmagicprobe
+- pyocd
+
+# Default flash runner if --runner is not given.
+flash-runner: openocd
+
+# Default debug runner if --runner is not given.
+debug-runner: openocd
+
+# Common runner configuration values.
+config:
+  board_dir: /home/dxpru/Dev/Zephyr/zephyr/boards/arm/rpi_pico
+  # Build outputs:
+  elf_file: zephyr.elf
+  hex_file: zephyr.hex
+  bin_file: zephyr.bin
+  uf2_file: zephyr.uf2
+  # Host tools:
+  gdb: /opt/zephyr-sdk-0.16.5/arm-zephyr-eabi/bin/arm-zephyr-eabi-gdb
+  openocd: /opt/zephyr-sdk-0.16.5/sysroots/x86_64-pokysdk-linux/usr/bin/openocd
+  openocd_search:
+    - /opt/zephyr-sdk-0.16.5/sysroots/x86_64-pokysdk-linux/usr/share/openocd/scripts
+
+# Runner specific arguments
+args:
+  openocd:
+    - --cmd-load
+    - flash write_image erase
+    - --cmd-verify
+    - verify_image
+    - --cmd-pre-init
+    - source [find interface/cmsis-dap.cfg]
+    - --cmd-pre-init
+    - transport select swd
+    - --cmd-pre-init
+    - source [find target/rp2040.cfg]
+    - --cmd-pre-init
+    - set_adapter_speed_if_not_set 2000
+  jlink:
+    - --dt-flash=y
+    - --device=RP2040_M0_0
+  uf2:
+    - --board-id=RPI-RP2
+  blackmagicprobe:
+    []
+
+  pyocd:
+    - --dt-flash=y
+    - --target=rp2040
