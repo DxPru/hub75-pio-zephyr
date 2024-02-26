@@ -1,3 +1,0 @@
-/home/dxpru/Dev/Zephyr/app/build/bootloader/CMakeFiles/boot_stage2.dir
-/home/dxpru/Dev/Zephyr/app/build/bootloader/CMakeFiles/edit_cache.dir
-/home/dxpru/Dev/Zephyr/app/build/bootloader/CMakeFiles/rebuild_cache.dir
