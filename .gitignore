@@ -10,7 +10,7 @@
 .envrc
 
 # build
-/build*
+build*
 
 # zephyr files
 bootloader
