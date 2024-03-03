@@ -15,6 +15,5 @@ manifest:
       import:
         name-allowlist:
           - cmsis
-          - hal_nordic
           - segger
-          - tinycrypt
+          - hal_rpipico
