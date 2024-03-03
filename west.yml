@@ -2,7 +2,7 @@
 
 manifest:
   self:
-    path: app
+    path: hub75-pio
 
   remotes:
     - name: zephyrproject-rtos
