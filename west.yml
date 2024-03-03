@@ -16,4 +16,4 @@ manifest:
         name-allowlist:
           - cmsis
           - segger
-          - hal_rpipico
+          - hal_rpi_pico
