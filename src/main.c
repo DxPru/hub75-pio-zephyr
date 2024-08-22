@@ -12,6 +12,7 @@ LOG_MODULE_REGISTER(sample, LOG_LEVEL_INF);
 
 #include <zephyr/kernel.h>
 #include <zephyr/device.h>
+#include <zephyr/devicetree.h>
 #include <zephyr/drivers/display.h>
 
 #ifdef CONFIG_ARCH_POSIX
