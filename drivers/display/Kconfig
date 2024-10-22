@@ -1,0 +1,23 @@
+# Copyright (c) 2024 DxPru
+# SPDX-License-Identifier: Apache-2.0
+
+menuconfig DISPLAY
+    bool "Display drivers"
+    help
+      This option enables the display driver class
+
+if DISPLAY
+
+config DISPLAY_INIT_PRIOROTY
+    int "Display device driver init priority"
+    default KERNEL_INIT_PRIORITY_DEVICE
+    help
+        Display device drivers init priority
+
+module = DISPLAY
+module-str = display
+source "subsys/logging/Kconfig.template.log_config"
+
+rsource "Kconfig.hub75_pio"
+
+endif # DISPLAY

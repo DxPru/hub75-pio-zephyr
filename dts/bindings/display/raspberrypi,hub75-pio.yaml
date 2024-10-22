@@ -1,0 +1,33 @@
+# Copyright (c) 2024, DxPru. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0
+
+description: Hub75 pio display driver
+
+compatible: "raspberrypi,hub75-pio"
+
+include: display-controller.yaml
+
+properties:
+  pixel-format:
+    type: int
+    default: 0
+    enum:
+      - 0 # RGB565
+      - 1 # RGB888
+    description:
+      Display pixel format.
+
+  ctrl-gpios:
+    type: phandle-array
+    required: true
+    description: Array of GPIOS for LAT, OE, CLK (need to be adjacent)
+
+  data-gpios:
+    type: phandle-array
+    required: true
+    description: Array of GPIOs to be used as data (r0 g0 b0 r1 g1 b1)
+                                                                
+  addr-gpios:
+    type: phandle-array
+    required: true
+    description: Arra of GPIOs to be used as row selector (ABCDE)
