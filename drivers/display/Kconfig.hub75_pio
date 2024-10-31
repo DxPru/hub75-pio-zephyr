@@ -4,9 +4,8 @@
 config DISPLAY_HUB75_PIO
     bool "Hub75 Pio display driver"
     default y
-    # depends on GPIO && PIO
-    select GPIO
-    # select PICOSDK_USE_PIO
-    # select PICOSDK_USE_CLAIM
+    select PICOSDK_USE_PIO
+    select PICOSDK_USE_CLAIM
+    depends on RESET
     help
         Hub75 Pio display driver

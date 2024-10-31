@@ -14,9 +14,9 @@
             height = <32>;
             width = <64>;
             pixel-format = <0>;
-            ctrl-gpios = <&gpio0 11 GPIO_ACTIVE_HIGH>,
-                                    <&gpio0 12 GPIO_ACTIVE_HIGH>,
-                                    <&gpio0 13 GPIO_ACTIVE_HIGH>;
+            oe-gpios = <&gpio0 11 GPIO_ACTIVE_HIGH>;
+            latch-gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>;
+            clk-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
             data-gpios = <&gpio0 24 GPIO_ACTIVE_HIGH>,
                                     <&gpio0 25 GPIO_ACTIVE_HIGH>,
                                     <&gpio0 26 GPIO_ACTIVE_HIGH>,

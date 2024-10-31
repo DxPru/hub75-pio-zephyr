@@ -5,12 +5,14 @@
 
 # python
 .venv
+__pycache__/
 
 # build
 /build*
 /twister-out*
 
-__pycache__/
+# clangd
+.cache
 
 # docs
 /doc/_build*

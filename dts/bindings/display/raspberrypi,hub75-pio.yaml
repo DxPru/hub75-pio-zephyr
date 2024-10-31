@@ -5,7 +5,7 @@ description: Hub75 pio display driver
 
 compatible: "raspberrypi,hub75-pio"
 
-include: display-controller.yaml
+include: [display-controller.yaml, "raspberrypi,pico-pio-device.yaml"]
 
 properties:
   pixel-format:
@@ -14,19 +14,28 @@ properties:
     enum:
       - 0 # RGB565
       - 1 # RGB888
-    description:
-      Display pixel format.
+    description: Display pixel format.
 
-  ctrl-gpios:
+  oe-gpios:
     type: phandle-array
     required: true
-    description: Array of GPIOS for LAT, OE, CLK (need to be adjacent)
+    description: The OE Pin
+
+  latch-gpios:
+    type: phandle-array
+    required: true
+    description: The Latch Pin
+
+  clk-gpios:
+    type: phandle-array
+    required: true
+    description: The Clk Pin
 
   data-gpios:
     type: phandle-array
     required: true
     description: Array of GPIOs to be used as data (r0 g0 b0 r1 g1 b1)
-                                                                
+
   addr-gpios:
     type: phandle-array
     required: true
