@@ -1,8 +1,8 @@
 /*
- *  * Copyright (c) 2024 DxPru. All Rights Reserved.
- *   *
- *    * SPDX-License-Identifier: Apache-2.0
- *     */
+ * Copyright (c) 2024 DxPru. All Rights Reserved.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
 
 #include "zephyr/devicetree.h"
 #include <zephyr/device.h>
@@ -218,8 +218,10 @@ static int h75p_init(const struct device *dev) {
   data->pixel_format = PIXEL_FORMAT_ARGB_8888;
 
   // Dispatch PIO's
-  PIO pio = pio_rpi_pico_get_pio(config->piodev);
+  PIO pio;
   float div = 2;
+
+  pio = pio_rpi_pico_get_pio(config->piodev);
 
   // Allocat the StateMaschines
   size_t sm_data;

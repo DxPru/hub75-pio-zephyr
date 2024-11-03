@@ -7,25 +7,40 @@
     chosen {
         zephyr,display = &display0;
     };
+};
 
-        display0: display0 {
-            compatible = "raspberrypi,hub75-pio";
-                       status = "okay";
-            height = <32>;
-            width = <64>;
-            pixel-format = <0>;
-            oe-gpios = <&gpio0 11 GPIO_ACTIVE_HIGH>;
-            latch-gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>;
-            clk-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
-            data-gpios = <&gpio0 24 GPIO_ACTIVE_HIGH>,
-                                    <&gpio0 25 GPIO_ACTIVE_HIGH>,
-                                    <&gpio0 26 GPIO_ACTIVE_HIGH>,
-                                    <&gpio0 27 GPIO_ACTIVE_HIGH>,
-                                    <&gpio0 28 GPIO_ACTIVE_HIGH>,
-                                    <&gpio0 29 GPIO_ACTIVE_HIGH>;
-            addr-gpios = <&gpio0 6  GPIO_ACTIVE_HIGH>,
-                                    <&gpio0 7  GPIO_ACTIVE_HIGH>,
-                                    <&gpio0 8  GPIO_ACTIVE_HIGH>,
-                                    <&gpio0 9  GPIO_ACTIVE_HIGH>;
-        };
+
+&pinctrl {
+    pio1_display_default: pio1_display_default {
+    };
+};
+
+&pio1 {
+    status = "okay";
+
+    display0: display0 {
+        compatible = "raspberrypi,hub75-pio";
+        status = "okay";
+
+        pinctrl-0 = <&pio1_display_default>;
+        pinctrl-names = "default";
+
+        height = <32>;
+        width = <64>;
+        pixel-format = <0>;
+
+        oe-gpios = <&gpio0 11 GPIO_ACTIVE_HIGH>;
+        latch-gpios = <&gpio0 12 GPIO_ACTIVE_HIGH>;
+        clk-gpios = <&gpio0 13 GPIO_ACTIVE_HIGH>;
+        data-gpios = <&gpio0 24 GPIO_ACTIVE_HIGH>,
+                     <&gpio0 25 GPIO_ACTIVE_HIGH>,
+                     <&gpio0 26 GPIO_ACTIVE_HIGH>,
+                     <&gpio0 27 GPIO_ACTIVE_HIGH>,
+                     <&gpio0 28 GPIO_ACTIVE_HIGH>,
+                     <&gpio0 29 GPIO_ACTIVE_HIGH>;
+        addr-gpios = <&gpio0 6  GPIO_ACTIVE_HIGH>,
+                     <&gpio0 7  GPIO_ACTIVE_HIGH>,
+                     <&gpio0 8  GPIO_ACTIVE_HIGH>,
+                     <&gpio0 9  GPIO_ACTIVE_HIGH>;
+    };
 };
